@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofoliu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header class="hero">
+            <h1>Portofoliu</h1>
+            <p class="author">Realizat de Andrei Axinte</p>
+        </header>
+        <section class="card">
+            <article class="item">
+                <span class="num">1</span>
+                <div class="content">
+                    <h2>Ce este HTML-ul?</h2>
+                    <p>HTML (HyperText Markup Language) este un limbaj de marcare ce poate fi utilizat pentru a crea structura unei pagini web, pentru a încărca resurse sau pentru a controla comportamentul browser-ului.</p>
+                </div>
+            </article>
+            <article class="item">
+                <span class="num">2</span>
+                <div class="content">
+                    <h2>Editoare de cod</h2>
+                    <p>În principal folosim Visual Studio Code pentru a edita cod manual deoarece este cel mai bine dotat editor, dar există și variante precum Notepad++ sau Notepad, sau chiar Cursor sau alte asemenea aplicații pentru editoare moderne de cod care au integrate inteligența artificială.</p>
+                </div>
+            </article>
+            <article class="item">
+                <span class="num">3</span>
+                <div class="content">
+                    <h2>Execuția codului</h2>
+                    <p>Pentru a vedea rezultatul codului, deschidem output-ul (fișierul HTML) în browsere compatibile precum Chrome, Edge, Firefox, Brave etc. Mai există variante precum hosting-ul public pentru a publica site-ul pe internet, dar și servere locale pentru a testa în rețea site-ul web.</p>
+                </div>
+            </article>
+        </section>
+        <section class="item standalone">
+            <span class="num">4</span>
+            <div class="content">
+                <h2>Structura paginii</h2>
+                <p>O pagină generică pur HTML conține următoarele secțiuni:</p>
+                <ul class="list">
+                    <li><strong>Antet:</strong> este partea pur invizibilă care conține resurse, instrucțiuni pentru browser, librării și tag-uri de customizare de bază.</li>
+                    <li><strong>Corp:</strong> conține codul sursă al site-ului în sine, unde putem găsi texte, elemente, imagini și așa mai departe.</li>
+                </ul>
+
+                <div class="code">
+                    <button class="copy" type="button" aria-label="Copiază codul">
+                        <i class="fa-solid fa-copy"></i>
+                        <i class="fa-solid fa-check"></i>
+                        <span class="label">Copiat</span>
+                    </button>
+                    <!-- AICI AM PUS ESCAPE characters ca sa nu se execute codul in Pagina -->
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;title&gt;Website&lt;/title&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;Hello World!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="item standalone">
+            <span class="num">5</span>
+            <div class="content">
+                <h2>Elementele limbajului</h2>
+
+                <h3><span class="sub">a</span> Cum se adaugă texte (paragrafe, titluri)</h3>
+                <p>Utilizăm elementul <code class="inline">&lt;p&gt;</code> pentru a adăuga texte sau paragrafe în pagină. Mai folosim și <code class="inline">&lt;hx&gt;</code> pentru adăugarea titlurilor în pagină, de la 1 la 6.</p>
+
+                <div class="code small">
+                    <button class="copy" type="button" aria-label="Copiază codul">
+                        <i class="fa-solid fa-copy"></i>
+                        <i class="fa-solid fa-check"></i>
+                        <span class="label">Copiat</span>
+                    </button>
+                    <!-- Si aici ca sa nu se execute codul aM pus pre si anti escape -->
+<pre><code>&lt;p&gt;Hello World!&lt;/p&gt;
+&lt;h1&gt;Hello World!&lt;/h1&gt;
+&lt;h2&gt;Hello World!&lt;/h2&gt;
+&lt;h3&gt;Hello World!&lt;/h3&gt;
+&lt;h4&gt;Hello World!&lt;/h4&gt;
+&lt;h5&gt;Hello World!&lt;/h5&gt;
+&lt;h6&gt;Hello World!&lt;/h6&gt;</code></pre>
+
+                </div>
+
+                <h3><span class="sub">b</span> Link-uri</h3>
+                <p>Utilizăm elementul <code class="inline">&lt;a&gt;</code> pentru a adăuga link-uri în pagină (ancoră). În href punem link-ul propriu-zis.</p>
+
+                <div class="code small">
+                    <button class="copy" type="button" aria-label="Copiază codul">
+                        <i class="fa-solid fa-copy"></i>
+                        <i class="fa-solid fa-check"></i>
+                        <span class="label">Copiat</span>
+                    </button>
+                    <!-- Si aici ca sa nu se execute codul aM pus pre si anti escape -->
+<pre><code>&lt;a href="#"&gt;Hello World!&lt;/a&gt;</code></pre>
+                </div>
+
+
+                <h3><span class="sub">c</span> Imagini</h3>
+                <p>Utilizăm elementul <code class="inline">&lt;img&gt;</code> pentru a adăuga imagini în pagină. Folosim src pentru calea către imagine și alt pentru textul alternativ.</p>
+
+                <div class="code small">
+                    <button class="copy" type="button" aria-label="Copiază codul">
+                        <i class="fa-solid fa-copy"></i>
+                        <i class="fa-solid fa-check"></i>
+                        <span class="label">Copiat</span>
+                    </button>
+                    <!-- Si aici ca sa nu se execute codul aM pus pre si anti escape -->
+<pre><code>&lt;img src="image.jpg" alt="Hello World!"&gt;</code></pre>
+
+                </div>
+
+                <h3><span class="sub">d</span> Liste (ordonate, neordonate)</h3>
+                <p>Utilizăm elementul <code class="inline">&lt;ul&gt;</code> pentru liste neordonate (cu buline) și <code class="inline">&lt;ol&gt;</code> pentru liste ordonate (numerotate). Fiecare element din listă se pune în <code class="inline">&lt;li&gt;</code>.</p>
+
+                <div class="code small">
+                    <button class="copy" type="button" aria-label="Copiază codul">
+                        <i class="fa-solid fa-copy"></i>
+                        <i class="fa-solid fa-check"></i>
+                        <span class="label">Copiat</span>
+                    </button>
+<pre><code>&lt;ul&gt;
+    &lt;li&gt;Hello&lt;/li&gt;
+    &lt;li&gt;World!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+    &lt;li&gt;Hello&lt;/li&gt;
+    &lt;li&gt;World!&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                </div>
+
+                <h3><span class="sub">e</span> Tabele</h3>
+                <p>Utilizăm elementul <code class="inline">&lt;table&gt;</code> pentru a adăuga tabele în pagină. Rândurile se pun în <code class="inline">&lt;tr&gt;</code>, celulele de antet în <code class="inline">&lt;th&gt;</code>, iar celulele obișnuite în <code class="inline">&lt;td&gt;</code>.</p>
+
+                <div class="code small">
+                    <button class="copy" type="button" aria-label="Copiază codul">
+                        <i class="fa-solid fa-copy"></i>
+                        <i class="fa-solid fa-check"></i>
+                        <span class="label">Copiat</span>
+                    </button>
+<pre><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Nume&lt;/th&gt;
+        &lt;th&gt;Vârstă&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Andrei&lt;/td&gt;
+        &lt;td&gt;20&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                </div>
+
+                <h3><span class="sub">f</span> Formulare</h3>
+                <p>Utilizăm elementul <code class="inline">&lt;form&gt;</code> pentru a crea formulare. În interior punem câmpuri precum <code class="inline">&lt;input&gt;</code>, etichete cu <code class="inline">&lt;label&gt;</code> și un buton de trimitere cu <code class="inline">&lt;button&gt;</code>.</p>
+
+                <div class="code small">
+                    <button class="copy" type="button" aria-label="Copiază codul">
+                        <i class="fa-solid fa-copy"></i>
+                        <i class="fa-solid fa-check"></i>
+                        <span class="label">Copiat</span>
+                    </button>
+<pre><code>&lt;form action="#" method="post"&gt;
+    &lt;label for="nume"&gt;Nume&lt;/label&gt;
+    &lt;input type="text" id="nume" name="nume"&gt;
+
+    &lt;label for="email"&gt;Email&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;
+
+    &lt;button type="submit"&gt;Trimite&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                </div>
+
+                <h3><span class="sub">g</span> Sunet / Video</h3>
+                <p>Utilizăm elementul <code class="inline">&lt;audio&gt;</code> pentru sunet și <code class="inline">&lt;video&gt;</code> pentru video. Atributul controls afișează butoanele de redare, iar în src punem calea către fișier.</p>
+
+                <div class="code small">
+                    <button class="copy" type="button" aria-label="Copiază codul">
+                        <i class="fa-solid fa-copy"></i>
+                        <i class="fa-solid fa-check"></i>
+                        <span class="label">Copiat</span>
+                    </button>
+<pre><code>&lt;audio src="sunet.mp3" controls&gt;&lt;/audio&gt;
+
+&lt;video src="video.mp4" width="640" controls&gt;&lt;/video&gt;</code></pre>
+                </div>
+
+                <h3><span class="sub">h</span> Zone în pagini (div)</h3>
+                <p>Utilizăm elementul <code class="inline">&lt;div&gt;</code> pentru a grupa alte elemente în zone ale paginii. Prin class sau id putem stiliza fiecare zonă separat din CSS.</p>
+
+                <div class="code small">
+                    <button class="copy" type="button" aria-label="Copiază codul">
+                        <i class="fa-solid fa-copy"></i>
+                        <i class="fa-solid fa-check"></i>
+                        <span class="label">Copiat</span>
+                    </button>
+<pre><code>&lt;div class="zona"&gt;
+    &lt;h2&gt;Hello World!&lt;/h2&gt;
+    &lt;p&gt;Hello World!&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Portofoliu by Andrei Axinte</p>
+        <p>© 2026 Toate drepturile rezervate</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.copy').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var code = btn.parentElement.querySelector('code');
+                // AICI AM modificat cand e done sa revina la normal si debounce de 2000
+                // am evitat debounce mai mic ca userul sa aiba timp sa vada cand apasa
+                var done = function () {
+                    btn.classList.add('copied');
+                    clearTimeout(btn.timer);
+                    btn.timer = setTimeout(function () { btn.classList.remove('coeqpied'); }, 2000);
+                };
+                // BOOTSTRAP.JS COPY FUNCTION V2
+                var fallback = function () {
+                    var range = document.createRange();
+                    range.selectNodeContents(code);
+                    var sel = window.getSelection();
+                    sel.removeAllRanges();
+                    sel.addRange(range);
+                    try { if (document.execCommand('copy')) { sel.removeAllRanges(); done(); } } catch (e) {}
+                };
+
+                // si aici din cate am citit pe MDN merge sa dai copy direct cu navigator
+                // daca nu mai merge probabil e din cauza faptului ca safari are alt sistem de copy, nu am mai avut timp sa implementez aici
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(code.textContent).then(done, fallback);
+                } else {
+                        fallback();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

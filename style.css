@@ -1,0 +1,365 @@
+/* Aici am folosit si surse bootstrap si fontawesome :)) */
+/* nu am inclus bootstrap-ul pt ca sunt exportate static */
+/* Fonturi am luat din sistem, nu am pus google fonts */
+
+/* AM FOLOSIT foarte multe variabile pentru ca mi se pare mult mai usor sa lucrez pe variabile care sa imi tina design-ul consistent */
+
+:root {
+    --bg: #fafafa;
+    --surface: #ffffff;
+    --text: #1a1a1a;
+    --muted: #5c5c66;
+    --accent: #a43fd0;
+    --accent-soft: #f5ebfb;
+    --border: #e6e6ea;
+    --code-bg: #16161d;
+    --code-text: #e8e8ef;
+    --btn: #b8b8c6;
+    --btn-hover: rgba(255, 255, 255, 0.08);
+    --ok: #7ee2a8;
+    --shadow: rgba(0, 0, 0, 0.04);
+    --radius: 20px;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Courier New", monospace;
+}
+
+/* Deci practic aici am facut un mic wrapper care schimba tema automat */
+/* DACA BROWSERUL foloseste dark theme atunci si site-ul va fi intuencat, altfel va fi white theme mereu */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --bg: #111114;
+        --surface: #18181d;
+        --text: #ededf2;
+        --muted: #a4a4b0;
+        --accent: #cf7ef0;
+        --accent-soft: #2a1d33;
+        --border: #2a2a32;
+        --code-bg: #0b0b0f;
+        --code-text: #e8e8ef;
+        --btn: #a4a4b0;
+        --btn-hover: rgba(255, 255, 255, 0.06);
+        --ok: #7ee2a8;
+        --shadow: rgba(0, 0, 0, 0.3);
+        color-scheme: dark;
+    }
+}
+
+/* aici am pus variabilele pentru dark theme */
+:root[data-theme="dark"] {
+    --bg: #111114;
+    --surface: #18181d;
+    --text: #ededf2;
+    --muted: #a4a4b0;
+    --accent: #cf7ef0;
+    --accent-soft: #2a1d33;
+    --border: #2a2a32;
+    --code-bg: #0b0b0f;
+    --code-text: #e8e8ef;
+    --btn: #a4a4b0;
+    --btn-hover: rgba(255, 255, 255, 0.06);
+    --ok: #7ee2a8;
+    --shadow: rgba(0, 0, 0, 0.3);
+    color-scheme: dark;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* tagul pentru webkit smoothing l-am pus pentru ca pe SAFARI sau pe Mac / IOS se vede urat daca nu are tag-ul, din propie experienta (inutil aici dar bine de inclus totusi) */
+body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 72px 24px 48px;
+}
+
+.hero {
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-size: clamp(2.4rem, 6vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+.author {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 8px 40px;
+    box-shadow: 0 8px 32px var(--shadow);
+}
+
+.item {
+    display: flex;
+    gap: 20px;
+    padding: 32px 0;
+}
+
+.card .item+.item {
+    border-top: 1px solid var(--border);
+}
+
+.standalone {
+    padding: 56px 0 0;
+}
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid var(--text);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 1px;
+}
+
+.content {
+    flex: 1;
+    min-width: 0;
+}
+
+.content h2 {
+    color: var(--accent);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    text-wrap: balance;
+}
+
+.content h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 16px 0 6px;
+}
+
+.content p {
+    color: var(--muted);
+    max-width: 65ch;
+}
+
+.sub {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: grid;
+    place-items: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.list {
+    list-style: none;
+    margin: 18px 0 28px;
+    display: grid;
+    gap: 12px;
+}
+
+.list li {
+    position: relative;
+    padding-left: 24px;
+    color: var(--muted);
+    max-width: 65ch;
+}
+
+.list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+}
+
+.list strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.code {
+    position: relative;
+    background: var(--code-bg);
+    border-radius: 16px;
+}
+
+.code pre {
+    font-family: var(--mono);
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: var(--code-text);
+    padding: 22px 24px;
+    padding-right: 120px;
+    overflow-x: auto;
+}
+
+.code.small {
+    display: inline-block;
+    margin-top: 16px;
+    max-width: 100%;
+}
+
+/* FUN FACT: aici m-am chinut cel mai mult sa arate bine dintre toate elementele din site :)) */
+/* la transition apare cu rosu background, din cate am inteles e deprecated tranzitia pe background dar nu inseamna ca nu mai merge deloc */
+.copy {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 32px;
+    padding: 0 10px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: var(--btn);
+    font-family: var(--font);
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.code.small .copy {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.copy:hover {
+    background: var(--btn-hover);
+    color: var(--code-text);
+}
+
+.copy:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.copy .fa-check,
+.copy .label {
+    display: none;
+}
+
+.copy.copied {
+    color: var(--ok);
+}
+
+.copy.copied .fa-copy {
+    display: none;
+}
+
+.copy.copied .fa-check {
+    display: inline-block;
+}
+
+.copy.copied .label {
+    display: inline;
+}
+
+/* font mai mic */
+.inline {
+    font-family: var(--mono);
+    font-size: 0.85em;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 2px 6px;
+    border-radius: 6px;
+}
+
+.footer {
+    max-width: 860px;
+    margin: 72px auto 32px;
+    padding: 36px 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* am pus media query sa mearga bine si pe telefoane sau device-uri mai mici (isi face auto resize in functie de rezolutie) */
+/* Aici am pus din greseala width 640px trebuia sa pun mai mult dar nu am mai avut timp sa modific */
+/* totusi pe mobil tot se vede bine, doar pe ceasurile inteligente *teoretic* nu s-ar vedea bine */
+
+@media (max-width: 640px) {
+    body {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 48px 16px 32px;
+    }
+
+    .hero {
+        margin-bottom: 28px;
+    }
+
+    .card {
+        padding: 4px 20px;
+        border-radius: 16px;
+    }
+
+    .item {
+        gap: 14px;
+        padding: 26px 0;
+    }
+
+    .standalone {
+        padding-top: 44px;
+    }
+
+    .num {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+
+    .content h2 {
+        font-size: 1.12rem;
+    }
+
+    .code {
+        border-radius: 12px;
+    }
+
+    .code pre {
+        font-size: 0.78rem;
+        padding: 18px;
+        padding-right: 110px;
+    }
+
+    .footer {
+        margin: 48px 16px 24px;
+        padding: 28px 0;
+    }
+}
