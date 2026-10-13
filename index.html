@@ -163,7 +163,7 @@
                 </div>
 
                 <h3><span class="sub">f</span> Formulare</h3>
-                <p>Utilizăm elementul <code class="inline">&lt;form&gt;</code> pentru a crea formulare. În interior punem câmpuri precum <code class="inline">&lt;input&gt;</code>, etichete cu <code class="inline">&lt;label&gt;</code> și un buton de trimitere cu <code class="inline">&lt;button&gt;</code>.</p>
+                <p>Utilizăm elementul <code class="inline">&lt;form&gt;</code> pentru a crea formulare. În interior punem câmpuri precum <code class="inline">&lt;input&gt;</code> (text, email, radio pentru o singură alegere, checkbox pentru mai multe), etichete cu <code class="inline">&lt;label&gt;</code> și un buton de trimitere cu <code class="inline">&lt;button&gt;</code>.</p>
 
                 <div class="code small">
                     <button class="copy" type="button" aria-label="Copiază codul">
@@ -177,6 +177,14 @@
 
     &lt;label for="email"&gt;Email&lt;/label&gt;
     &lt;input type="email" id="email" name="email"&gt;
+
+    &lt;input type="radio" id="da" name="raspuns" value="da"&gt;
+    &lt;label for="da"&gt;Da&lt;/label&gt;
+    &lt;input type="radio" id="nu" name="raspuns" value="nu"&gt;
+    &lt;label for="nu"&gt;Nu&lt;/label&gt;
+
+    &lt;input type="checkbox" id="termeni" name="termeni"&gt;
+    &lt;label for="termeni"&gt;Accept termenii&lt;/label&gt;
 
     &lt;button type="submit"&gt;Trimite&lt;/button&gt;
 &lt;/form&gt;</code></pre>
@@ -229,7 +237,7 @@
                 var done = function () {
                     btn.classList.add('copied');
                     clearTimeout(btn.timer);
-                    btn.timer = setTimeout(function () { btn.classList.remove('coeqpied'); }, 2000);
+                    btn.timer = setTimeout(function () { btn.classList.remove('copied'); }, 2000);
                 };
                 // BOOTSTRAP.JS COPY FUNCTION V2
                 var fallback = function () {
